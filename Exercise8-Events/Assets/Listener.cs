@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class Listener : MonoBehaviour
 {
-    Invoker invoker;
+    //Invoker invoker;
 
     private void Start()
     {
-        invoker = FindObjectOfType<Camera>().GetComponent<Invoker>();
-        invoker.AddNoArgumentListener(PrintAMessage);
-        invoker.AddIntArgumentListener(PrintIntMessage);
+        //invoker = FindObjectOfType<Camera>().GetComponent<Invoker>();
+        //invoker.AddNoArgumentListener(PrintAMessage);
+        //invoker.AddIntArgumentListener(PrintIntMessage);
+        EventManager.AddListener(PrintAMessage);
+        EventManager.AddIntListener(PrintIntMessage);
     }
 
     public void PrintAMessage()

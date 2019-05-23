@@ -21,6 +21,7 @@ public class Invoker : MonoBehaviour
         timer = GetComponent<Timer>();
         timer.Duration = 1f;
         timer.Run();
+        EventManager.AddInvoker(this);
     }
 
     void Update()
@@ -34,6 +35,7 @@ public class Invoker : MonoBehaviour
         }
     }
 
+    
     public void AddNoArgumentListener(UnityAction listener)
     {
         eventOne.AddListener(listener);
@@ -43,5 +45,5 @@ public class Invoker : MonoBehaviour
     {
         eventTwo.AddListener(listenerInt);
     }
-
+    
 }
